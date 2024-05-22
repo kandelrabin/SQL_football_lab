@@ -83,9 +83,7 @@ SELECT *, fthg+ftag AS total FROM matches WHERE division_code = 'E0' ORDER BY to
 10) Find the name of the division in which the most goals were scored in a single season and the year in which it happened.
 
 ```sql
-SELECT division_code,SUM(fthg+ftag) AS total_goals FROM matches GROUP BY division_code ORDER BY total_goals DESC;
-
-SELECT name FROM divisions where code = 'EC';
+SELECT division_code,SUM(fthg+ftag) AS total_goals, season FROM matches GROUP BY division_code, season ORDER BY total_goals DESC;
 
 
 ```
